@@ -8,25 +8,41 @@
         name: 'services',
         data() {
             return {
-                columns: [{
+                columns: [
+                    {
+                        title: '注册ID',
+                        key: 'registration',
+                        width:300
+                    },
+                    {
+                        title: '类型',
+                        key: 'type'
+                    },
+                    {
                         title: '服务名称',
                         key: 'name'
                     },
                     {
                         title: 'host',
-                        key: 'location'
+                        render:(h,{row})=>{
+                            if(row.location.host == undefined){
+                                return "--";
+                            }
+                            return row.location.host;
+                        }
                     },
                     {
                         title: 'port',
-                        key: 'location'
+                        render:(h,{row})=>{
+                            if(row.location.host == undefined){
+                                return "--";
+                            }
+                            return row.location.port;
+                        }
                     },
                     {
                         title: '状态',
                         key: 'status'
-                    },
-                    {
-                        title: 'port',
-                        key: 'location'
                     }
                 ],
                 data: []

@@ -1,15 +1,17 @@
 <template>
    <div class="layout">
         <Menu mode="horizontal" theme="dark" active-key="1">
-            <div class="layout-logo"></div>
+            <div class="layout-logo">
+                微服务监控平台
+            </div>
             <div class="layout-nav">
                 <Menu-item key="1">
                     <Icon type="ios-recording"></Icon>
-                    服务概况
+                    服务列表
                 </Menu-item>
                 <Menu-item key="2">
                     <Icon type="ios-keypad"></Icon>
-                    导航二
+                    服务监控
                 </Menu-item>
                 <Menu-item key="3">
                     <Icon type="ios-analytics"></Icon>
@@ -43,14 +45,16 @@ export default {
         background: #f5f7f9;
     }
     .layout-logo{
-        width: 100px;
+        width: auto;
         height: 30px;
-        background: #5b6270;
+        margin-top:15px;
+        margin-left:20px;
+        line-height: 30px;
         border-radius: 3px;
         float: left;
-        position: relative;
-        top: 15px;
-        left: 20px;
+        text-align: left;
+        color:#ffffff;
+        font-size: 24px;
     }
     .layout-nav{
         width: auto;
