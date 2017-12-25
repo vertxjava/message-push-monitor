@@ -15,11 +15,11 @@
                 </Menu-item>
                 <Menu-item key="3">
                     <Icon type="ios-analytics"></Icon>
-                    导航三
+                    日志监控
                 </Menu-item>
                 <Menu-item key="4">
                     <Icon type="ios-paper"></Icon>
-                    导航四
+                    流量监控
                 </Menu-item>
             </div>
         </Menu>

@@ -10,34 +10,32 @@
             return {
                 columns: [
                     {
+                        title: '服务名称',
+                        key: 'name',
+                        width:160
+                    },
+                    {
                         title: '注册ID',
                         key: 'registration',
                         width:300
-                    },
+                    }
+                    ,
                     {
                         title: '类型',
-                        key: 'type'
+                        key: 'type',
+                        width:160
                     },
+                    
                     {
-                        title: '服务名称',
-                        key: 'name'
-                    },
-                    {
-                        title: 'host',
+                        title: 'location',
                         render:(h,{row})=>{
+                            var str = "";
                             if(row.location.host == undefined){
-                                return "--";
+                                str = row.location.servers;
+                            }else{
+                                str = row.location.host+":"+row.location.port
                             }
-                            return row.location.host;
-                        }
-                    },
-                    {
-                        title: 'port',
-                        render:(h,{row})=>{
-                            if(row.location.host == undefined){
-                                return "--";
-                            }
-                            return row.location.port;
+                            return str;
                         }
                     },
                     {
@@ -51,9 +49,10 @@
         mounted: function() {
             var _this = this;
             this.$nextTick(function() {
-                this.$http.get("http://localhost:9000/discovery").then(
+                this.$http.get("http://localhost:8001/discovery").then(
                         response => {
                             _this.data = response.data;
+                            console.log(response.data);
                         },
                         error => {
                         }
