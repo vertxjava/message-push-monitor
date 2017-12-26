@@ -14,6 +14,12 @@ const Services = resolve => {
   })
 }
 
+const DeviceInfo = resolve => {
+  require.ensure(['../components/DeviceInfo.vue'], () => {
+      resolve(require('../components/DeviceInfo.vue'))
+  })
+}
+
 export default new Router({
   routes: [
     {
@@ -25,6 +31,14 @@ export default new Router({
           path: '/services',
           name: 'Services',
           component: Services,
+          meta:{
+            requireAuth: true
+          }
+        },
+        {
+          path: '/deviceInfo',
+          name: 'DeviceInfo',
+          component: DeviceInfo,
           meta:{
             requireAuth: true
           }

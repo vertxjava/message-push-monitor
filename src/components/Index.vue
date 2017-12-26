@@ -5,14 +5,18 @@
                 微服务监控平台
             </div>
             <div class="layout-nav">
-                <Menu-item key="1">
-                    <Icon type="ios-recording"></Icon>
-                    服务列表
-                </Menu-item>
-                <Menu-item key="2">
-                    <Icon type="ios-keypad"></Icon>
-                    服务监控
-                </Menu-item>
+                <router-link to="/services">
+                    <Menu-item key="1">
+                        <Icon type="ios-recording"></Icon>
+                        服务列表
+                    </Menu-item>
+                </router-link>
+                <router-link to="/deviceInfo">
+                    <Menu-item key="2">
+                        <Icon type="ios-keypad"></Icon>
+                        设备信息上报
+                    </Menu-item>
+                </router-link>
                 <Menu-item key="3">
                     <Icon type="ios-analytics"></Icon>
                     日志监控
